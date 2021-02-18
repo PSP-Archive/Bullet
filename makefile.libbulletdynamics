@@ -1,0 +1,32 @@
+TARGET_LIB = libbulletdynamics.a
+OBJS = BulletDynamics\ConstraintSolver\btConeTwistConstraint.o \
+BulletDynamics\ConstraintSolver\btContactConstraint.o \
+BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.o \
+BulletDynamics\ConstraintSolver\btHingeConstraint.o \
+BulletDynamics\ConstraintSolver\btOdeContactJoint.o \
+BulletDynamics\ConstraintSolver\btOdeJoint.o \
+BulletDynamics\ConstraintSolver\btOdeQuickstepConstraintSolver.o \
+BulletDynamics\ConstraintSolver\btOdeTypedJoint.o \
+BulletDynamics\ConstraintSolver\btPoint2PointConstraint.o \
+BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.o \
+BulletDynamics\ConstraintSolver\btSliderConstraint.o \
+BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.o \
+BulletDynamics\ConstraintSolver\btSorLcp.o \
+BulletDynamics\ConstraintSolver\btTypedConstraint.o \
+BulletDynamics\Dynamics\btContinuousDynamicsWorld.o \
+BulletDynamics\Dynamics\btDiscreteDynamicsWorld.o \
+BulletDynamics\Dynamics\btRigidBody.o \
+BulletDynamics\Dynamics\btSimpleDynamicsWorld.o \
+BulletDynamics\Dynamics\Bullet-C-API.o \
+BulletDynamics\Vehicle\btRaycastVehicle.o \
+BulletDynamics\Vehicle\btWheelInfo.o  	 
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+PSPPATH = $(shell psp-config --psp-prefix)
+
+INCDIR = $(PSPPATH)/include
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+include $(PSPSDK)/lib/build.mak

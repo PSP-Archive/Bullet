@@ -1,0 +1,18 @@
+TARGET_LIB = libbulletsoftbody.a
+OBJS = BulletSoftBody\btSoftBody.o \
+BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.o \
+BulletSoftBody\btSoftBodyHelpers.o \
+BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.o \
+BulletSoftBody\btSoftRigidCollisionAlgorithm.o \
+BulletSoftBody\btSoftRigidDynamicsWorld.o \
+BulletSoftBody\btSoftSoftCollisionAlgorithm.o 	 
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+PSPPATH = $(shell psp-config --psp-prefix)
+
+INCDIR = $(PSPPATH)/include
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+include $(PSPSDK)/lib/build.mak

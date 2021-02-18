@@ -1,0 +1,15 @@
+TARGET_LIB = libbulletmath.a
+OBJS = LinearMath\btAlignedAllocator.o \
+		LinearMath\btConvexHull.o \
+		LinearMath\btGeometryUtil.o \
+		LinearMath\btQuickprof.o 
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+PSPPATH = $(shell psp-config --psp-prefix)
+
+INCDIR = $(PSPPATH)/include
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+include $(PSPSDK)/lib/build.mak
